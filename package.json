@@ -1,0 +1,36 @@
+{
+  "name": "react-element-pan",
+  "version": "1.0.0",
+  "description": "React component for allowing panning of DOM-elements too large for their container, in a Google Maps-like way.",
+  "main": "element-pan.js",
+  "scripts": {
+    "test": "node test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rexxars/react-element-pan.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "scroll",
+    "pan",
+    "view",
+    "overflow"
+  ],
+  "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexxars/react-element-pan/issues"
+  },
+  "homepage": "https://github.com/rexxars/react-element-pan",
+  "devDependencies": {
+    "browserify": "^5.10.0",
+    "react": "^0.11.1",
+    "watchify": "^1.0.2"
+  },
+  "dependencies": {
+    "eventlistener": "0.0.1"
+  }
+}

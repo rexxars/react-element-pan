@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/noise.png);
+
+    font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(72, 72, 72);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.demos:before, .demos:after {
+    content: ' ';
+    display: table;
+}
+
+.demos:after {
+    clear: both;
+}
+
+.demo {
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    margin: 5px;
+    float: left;
+}
+
+#image-demo img {
+    min-height: 1200px;
+    min-width: 1200px;
+}
+
+#html-demo {
+    width: 400px;
+    clear: right;
+}
+
+#html-demo .element-pan div {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px dashed #000;
+    margin: 5px;
+    text-indent: 10px;
+}
+
+.element-pan {
+    max-width: 400px;
+    height: 400px;
+}
