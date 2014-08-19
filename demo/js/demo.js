@@ -3,6 +3,8 @@
 var React = window.React || require('react');
 var ElementPan = window.reactElementPan || require('react-element-pan');
 
+React.initializeTouchEvents(true);
+
 // Simple image demo
 React.renderComponent(
     new ElementPan({
@@ -10,6 +12,14 @@ React.renderComponent(
         startY: 360
     }, React.DOM.img({ src: 'img/beer.jpg' })
 ), document.getElementById('image-demo'));
+
+// Huge SVG demo
+React.renderComponent(
+    new ElementPan({
+        startX: 1771,
+        startY: 1360
+    }, React.DOM.img({ src: 'img/metro.svg' })
+), document.getElementById('map-demo')); 
 
 // Slightly more complicated DOM-element demo
 var i = 20, themDivs = [];

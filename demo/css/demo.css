@@ -8,33 +8,22 @@ body {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.demos:before, .demos:after {
-    content: ' ';
-    display: table;
-}
-
-.demos:after {
-    clear: both;
+h1 {
+    font-size: 1.8em;
 }
 
 .demo {
     border: 5px solid rgba(0, 0, 0, 0.5);
     margin: 5px;
-    float: left;
 }
 
 #image-demo img {
     min-height: 1200px;
     min-width: 1200px;
-}
-
-#html-demo {
-    width: 400px;
-    clear: right;
 }
 
 #html-demo .element-pan div {
@@ -44,7 +33,30 @@ body {
     text-indent: 10px;
 }
 
+#map-demo img {
+    width: 4000px;
+    min-height: 3400px;
+}
+
 .element-pan {
-    max-width: 400px;
     height: 400px;
+}
+
+@media (max-width: 480px) {
+    .element-pan {
+        height: 300px;
+    }
+
+    .demo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    p {
+        padding: 0 5px;
+    }
 }

@@ -48,7 +48,9 @@
              * is still being pressed) - this is why we're attaching to the window
              */
             eventListener.add(window, 'mousemove', this.onDragMove);
+            eventListener.add(window, 'touchmove', this.onDragMove);
             eventListener.add(window, 'mouseup', this.onDragStop);
+            eventListener.add(window, 'touchend', this.onDragStop);
             
             // If we have multiple child nodes, use the scroll[Height/Width]
             // If we have no child-nodes, use bounds to find size of inner content
@@ -58,15 +60,19 @@
             } else {
                 bounds = e.target.getBoundingClientRect();
             }
-            
+
+            // Find start position of drag based on touch/mouse coordinates
+            var startX = typeof e.clientX === 'undefined' ? e.changedTouches[0].clientX : e.clientX,
+                startY = typeof e.clientY === 'undefined' ? e.changedTouches[0].clientY : e.clientY;
+
             var state = {
                 dragging: true,
 
                 elHeight: this.el.clientHeight,
                 elWidth: this.el.clientWidth,
 
-                startX: e.clientX,
-                startY: e.clientY,
+                startX: startX,
+                startY: startY,
 
                 scrollX: this.el.scrollLeft,
                 scrollY: this.el.scrollTop,
@@ -87,18 +93,21 @@
                 return;
             }
 
+            var x = typeof e.clientX === 'undefined' ? e.changedTouches[0].clientX : e.clientX,
+                y = typeof e.clientY === 'undefined' ? e.changedTouches[0].clientY : e.clientY;
+
             // Letting the browser automatically stop on scrollHeight
             // gives weird bugs where some extra pixels are showing.
             // Substracting the height/width of the container from the
             // inner content seems to do the trick.
             this.el.scrollLeft = Math.min(
                 this.state.maxY - this.state.elWidth,
-                this.state.scrollX - (e.clientX - this.state.startX)
+                this.state.scrollX - (x - this.state.startX)
             );
 
             this.el.scrollTop  = Math.min(
                 this.state.maxY - this.state.elHeight,
-                this.state.scrollY - (e.clientY - this.state.startY)
+                this.state.scrollY - (y - this.state.startY)
             );
 
             if (this.props.onPan) {
@@ -110,7 +119,9 @@
             this.setState({ dragging: false });
 
             eventListener.remove(window, 'mousemove', this.onDragMove);
+            eventListener.remove(window, 'touchmove', this.onDragMove);
             eventListener.remove(window, 'mouseup', this.onDragStop);
+            eventListener.remove(window, 'touchend', this.onDragStop);
 
             if (this.props.onPanStop) {
                 this.props.onPanStop({ x: this.el.scrollLeft, y: this.el.scrollTop });
@@ -135,7 +146,8 @@
                 React.DOM.div({
                     className: this.props.className,
                     style: { overflow: 'hidden', cursor: 'move' },
-                    onMouseDown: this.onDragStart
+                    onMouseDown: this.onDragStart,
+                    onTouchStart: this.onDragStart
                 }, this.props.children)
             );
         }
