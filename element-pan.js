@@ -101,7 +101,7 @@
             // Substracting the height/width of the container from the
             // inner content seems to do the trick.
             this.el.scrollLeft = Math.min(
-                this.state.maxY - this.state.elWidth,
+                this.state.maxX - this.state.elWidth,
                 this.state.scrollX - (x - this.state.startX)
             );
 
