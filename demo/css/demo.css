@@ -59,4 +59,8 @@ h1 {
     p {
         padding: 0 5px;
     }
+
+    .fork-ribbon {
+        display: none;
+    }
 }
