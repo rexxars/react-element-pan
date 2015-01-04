@@ -21,7 +21,7 @@ var ElementPan = require('react-element-pan');
 React.initializeTouchEvents(true);
 
 // Render the component
-React.renderComponent(
+React.render(
     new ElementPan({
         onPanStart: function() { /* Pan started! */ },
         onPanStop: function() { /* Pan ended! */ },
@@ -33,10 +33,11 @@ React.renderComponent(
 ), document.body);
 
 // Or, with JSX:
-React.renderComponent(
+React.render(
     <ElementPan>
         <img src="some-large-image.jpg" />
-    </ElementPan>
+    </ElementPan>,
+    document.body
 );
 ```
 
