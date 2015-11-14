@@ -8,7 +8,8 @@
     "test": "eslint .",
     "build": "npm run build:umd && npm run build:prod",
     "build:umd": "webpack src/element-pan.js umd/element-pan.js",
-    "build:prod": "NODE_ENV=production webpack -p src/element-pan.js umd/element-pan.min.js"
+    "build:prod": "NODE_ENV=production webpack -p src/element-pan.js umd/element-pan.min.js",
+    "prepublish": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
