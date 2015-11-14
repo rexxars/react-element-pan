@@ -6,6 +6,10 @@ var React = window.React || require('react');
 var ReactDom = window.ReactDOM || require('react-dom') || React;
 var ElementPan = React.createFactory(window.reactElementPan || require('react-element-pan'));
 
+if (React.initializeTouchEvents) {
+    React.initializeTouchEvents(true);
+}
+
 // Simple image demo
 ReactDom.render(
     new ElementPan({
