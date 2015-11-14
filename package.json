@@ -3,16 +3,16 @@
   "version": "1.0.2",
   "description": "React component for allowing panning of DOM-elements too large for their container, in a Google Maps-like way.",
   "main": "element-pan.js",
+  "browser": "./umd/element-pan.js",
   "scripts": {
     "test": "eslint .",
-    "build": "browserify element-pan.js -o vendor/imboclient-3.1.1.js -s reactElementPan"
+    "build": "npm run build:umd && npm run build:prod",
+    "build:umd": "webpack src/element-pan.js umd/element-pan.js",
+    "build:prod": "NODE_ENV=production webpack -p src/element-pan.js umd/element-pan.min.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:rexxars/react-element-pan.git"
-  },
-  "browserify-shim": {
-    "react": "global:React"
   },
   "keywords": [
     "react",
@@ -31,7 +31,8 @@
   "homepage": "https://github.com/rexxars/react-element-pan",
   "devDependencies": {
     "eslint": "^1.9.0",
-    "eslint-config-vaffel": "^3.0.0"
+    "eslint-config-vaffel": "^3.0.0",
+    "webpack": "^1.12.6"
   },
   "dependencies": {
     "eventlistener": "0.0.1"

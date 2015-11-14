@@ -1,12 +1,13 @@
 'use strict';
 
+var require = typeof require === 'undefined' ? function() {} : require;
+
 var React = window.React || require('react');
+var ReactDom = window.ReactDOM || require('react-dom') || React;
 var ElementPan = React.createFactory(window.reactElementPan || require('react-element-pan'));
 
-React.initializeTouchEvents(true);
-
 // Simple image demo
-React.render(
+ReactDom.render(
     new ElementPan({
         startX: 771,
         startY: 360
@@ -14,7 +15,7 @@ React.render(
 ), document.getElementById('image-demo'));
 
 // Huge SVG demo
-React.render(
+ReactDom.render(
     new ElementPan({
         startX: 1771,
         startY: 1360
@@ -27,13 +28,13 @@ while (--i) {
     themDivs.push(React.DOM.div({
         key: i,
         style: {
-            width:  i * 30,
+            width: i * 30,
             lineHeight: (i * 10) + 'px'
         }
     }, 'Smaller...'));
 }
 
-React.render(
+ReactDom.render(
     new ElementPan(null, themDivs),
     document.getElementById('html-demo')
 );
