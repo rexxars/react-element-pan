@@ -26,7 +26,8 @@ React.render(
         onPanStart: function() { /* Pan started! */ },
         onPanStop: function() { /* Pan ended! */ },
         onPan: function() { /* Pan move! */ },
-
+        width: 800, // Optional width for the ElementPan container
+        height: 800, // Optional height for the ElementPan container
         startX: 771, // Optional X coordinate to start at
         startY: 360  // Optional Y coordinate to start at
     }, React.DOM.img({ src: 'some-large-image.jpg' })
