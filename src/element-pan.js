@@ -14,7 +14,9 @@ var ElementPan = React.createClass({
         onPan: PropTypes.func,
         onPanStop: PropTypes.func,
         startX: PropTypes.number,
-        startY: PropTypes.number
+        startY: PropTypes.number,
+        width: PropTypes.number,
+        height: PropTypes.number
     },
 
     getDefaultProps: function() {
@@ -134,12 +136,29 @@ var ElementPan = React.createClass({
         }
     },
 
+    getContainerStyles: function() {
+        var style = {
+            overflow: 'hidden',
+            cursor: 'move'            
+        }
+
+        if (this.props.width) {
+            style.width = this.props.width + 'px';
+        }
+
+        if (this.props.height) {
+            style.height = this.props.height + 'px';
+        }
+
+        return style;
+    },
+
     render: function() {
         return (
             React.DOM.div({
                 ref: 'container',
                 className: this.props.className,
-                style: { overflow: 'hidden', cursor: 'move' },
+                style: this.getContainerStyles(),
                 onMouseDown: this.onDragStart,
                 onTouchStart: this.onDragStart
             }, this.props.children)
