@@ -142,12 +142,12 @@ var ElementPan = React.createClass({
             cursor: 'move'            
         }
 
-        if(this.props.width) {
-            style.width = this.props.width + "px";
+        if (this.props.width) {
+            style.width = this.props.width + 'px';
         }
 
-        if(this.props.height) {
-            style.height = this.props.height + "px";
+        if (this.props.height) {
+            style.height = this.props.height + 'px';
         }
 
         return style;
