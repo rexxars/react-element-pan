@@ -143,11 +143,11 @@ var ElementPan = React.createClass({
         }
 
         if (this.props.width) {
-            style.width = this.props.width + 'px';
+            style.width = this.props.width;
         }
 
         if (this.props.height) {
-            style.height = this.props.height + 'px';
+            style.height = this.props.height;
         }
 
         return style;
