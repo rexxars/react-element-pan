@@ -123,9 +123,9 @@ var ElementPan = React.createClass({
         this.el = this.refs.container;
 
         // Old versions of React doesn't return the raw DOM node
-        if (!(this.el instanceof window.Node)) {
-            this.el = this.el.getDOMNode();
-        }
+       // if (!(this.el instanceof window.Node)) {
+       //     this.el = this.el.getDOMNode();
+       // }
 
         if (this.props.startX) {
             this.el.scrollLeft = this.props.startX;
@@ -143,11 +143,11 @@ var ElementPan = React.createClass({
         }
 
         if (this.props.width) {
-            style.width = this.props.width + 'px';
+            style.width = this.props.width;
         }
 
         if (this.props.height) {
-            style.height = this.props.height + 'px';
+            style.height = this.props.height;
         }
 
         return style;
