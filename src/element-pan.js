@@ -16,7 +16,8 @@ var ElementPan = React.createClass({
         startX: PropTypes.number,
         startY: PropTypes.number,
         width: PropTypes.number,
-        height: PropTypes.number
+        height: PropTypes.number,
+        style: PropTypes.object
     },
 
     getDefaultProps: function() {
@@ -148,6 +149,10 @@ var ElementPan = React.createClass({
 
         if (this.props.height) {
             style.height = this.props.height;
+        }
+
+        if (this.props.style) {
+            style = Object.assign({}, style, this.props.style);
         }
 
         return style;
