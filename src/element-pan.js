@@ -33,8 +33,6 @@ var ElementPan = React.createClass({
     },
 
     onDragStart: function(e) {
-        e.preventDefault();
-
         // We want to be able to pan around inside the container even when the
         // mouse is on the outside of the element (as long as the mouse button
         // is still being pressed) - this is why we're attaching to the window
@@ -80,6 +78,8 @@ var ElementPan = React.createClass({
     },
 
     onDragMove: function(e) {
+	    e.preventDefault();
+		
         if (!this.state.dragging) {
             return;
         }
