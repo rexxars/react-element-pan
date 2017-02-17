@@ -78,7 +78,7 @@ var ElementPan = React.createClass({
     },
 
     onDragMove: function(e) {
-	    e.preventDefault();
+	e.preventDefault();
 		
         if (!this.state.dragging) {
             return;
