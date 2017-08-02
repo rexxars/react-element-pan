@@ -15,7 +15,7 @@ ReactDom.render(
     new ElementPan({
         startX: 771,
         startY: 360
-    }, React.DOM.img({ src: 'img/beer.jpg' })
+    }, React.DOM.img({ src: 'img/beer.jpg', onMouseDown(e) { e.preventDefault() } })
 ), document.getElementById('image-demo'));
 
 // Huge SVG demo
@@ -23,7 +23,7 @@ ReactDom.render(
     new ElementPan({
         startX: 1771,
         startY: 1360
-    }, React.DOM.img({ src: 'img/metro.svg' })
+    }, React.DOM.img({ src: 'img/metro.svg', onMouseDown(e) { e.preventDefault() } })
 ), document.getElementById('map-demo'));
 
 // Slightly more complicated DOM-element demo
