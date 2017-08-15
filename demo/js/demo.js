@@ -16,7 +16,7 @@ ReactDom.render(
         startX: 771,
         startY: 360
     }, React.DOM.img({
-        src: 'img/beer.jpg', onMouseDown: function (e) {
+        src: 'img/beer.jpg', onMouseDown: function(e) {
             e.preventDefault();
         }
     })
@@ -28,7 +28,7 @@ ReactDom.render(
         startX: 1771,
         startY: 1360
     }, React.DOM.img({
-        src: 'img/metro.svg', onMouseDown: function (e) {
+        src: 'img/metro.svg', onMouseDown: function(e) {
             e.preventDefault();
         }
     })
