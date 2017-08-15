@@ -41,7 +41,7 @@ var ElementPan = React.createClass({
         eventListener.add(window, 'mouseup', this.onDragStop);
         eventListener.add(window, 'touchend', this.onDragStop);
 
-        // If we have multiple child nodes, use the scroll[Height/Width]
+        // If we have any child nodes, use the scroll[Height/Width]
         // If we have no child-nodes, use bounds to find size of inner content
         var bounds, target = e.currentTarget || e.target;
         if (target.childNodes.length > 0) {
