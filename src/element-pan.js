@@ -44,7 +44,7 @@ var ElementPan = React.createClass({
         // If we have multiple child nodes, use the scroll[Height/Width]
         // If we have no child-nodes, use bounds to find size of inner content
         var bounds, target = e.currentTarget || e.target;
-        if (target.childNodes.length > 1) {
+        if (target.childNodes.length > 0) {
             bounds = { width: target.scrollWidth, height: target.scrollHeight };
         } else {
             bounds = e.target.getBoundingClientRect();
