@@ -39,6 +39,6 @@
     "eventlistener": "0.0.1"
   },
   "peerDependencies": {
-    "react": ">= 0.11.0"
+    "react": "^16.2.0"
   }
 }
