@@ -7,7 +7,8 @@
   "browser": "umd/element-pan.js",
   "scripts": {
     "test": "eslint .",
-    "build": "babel -s true src/element-pan.js -o lib/element-pan.js",
+    "build": "npm run build:lib && npm run build:umd",
+    "build:lib": "babel -s true src/element-pan.js -o lib/element-pan.js",
     "build:umd": "NODE_ENV=production webpack -p",
     "prepublishOnly": "npm run build && npm run test"
   },
