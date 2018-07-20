@@ -11,7 +11,12 @@ ReactDom.render(
       startX: 771,
       startY: 360
     },
-    h('img', {src: 'img/beer.jpg'})
+    h('img', {
+      src: 'img/beer.jpg',
+      onMouseDown: evt => {
+        evt.preventDefault()
+      }
+    })
   ),
   document.getElementById('image-demo')
 )
@@ -24,7 +29,12 @@ ReactDom.render(
       startX: 1771,
       startY: 1360
     },
-    h('img', {src: 'img/metro.svg'})
+    h('img', {
+      src: 'img/metro.svg',
+      onMouseDown: evt => {
+        evt.preventDefault()
+      }
+    })
   ),
   document.getElementById('map-demo')
 )
