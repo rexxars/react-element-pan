@@ -5,6 +5,7 @@
   "main": "lib/element-pan.js",
   "unpkg": "umd/element-pan.js",
   "browser": "umd/element-pan.js",
+  "typings": "src/element-pan.d.ts",
   "scripts": {
     "test": "eslint .",
     "build": "npm run build:lib && npm run build:umd",
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/rexxars/react-element-pan",
   "devDependencies": {
+    "@types/react": "^16.4.6",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
