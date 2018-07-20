@@ -1,6 +1,6 @@
 {
   "name": "react-element-pan",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "React component for allowing panning of DOM-elements too large for their container, in a Google Maps-like way.",
   "main": "lib/element-pan.js",
   "unpkg": "umd/element-pan.js",
