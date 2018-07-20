@@ -1,11 +1,11 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var eventListener = require('eventlistener');
 
-var PropTypes = React.PropTypes;
-
-var ElementPan = React.createClass({
+var ElementPan = createReactClass({
     displayName: 'ElementPan',
 
     propTypes: {

@@ -31,8 +31,10 @@
   },
   "homepage": "https://github.com/rexxars/react-element-pan",
   "devDependencies": {
+    "create-react-class": "^15.6.3",
     "eslint": "^3.15.0",
     "eslint-config-vaffel": "^5.0.0",
+    "prop-types": "^15.6.2",
     "webpack": "^1.12.6"
   },
   "dependencies": {
