@@ -1,44 +1,52 @@
-'use strict';
-
-var require = typeof require === 'undefined' ? function() {} : require; // eslint-disable-line no-use-before-define
-
-var React = window.React || require('react');
-var ReactDom = window.ReactDOM || require('react-dom') || React;
-var ElementPan = React.createFactory(window.reactElementPan || require('react-element-pan'));
-
-if (React.initializeTouchEvents) {
-    React.initializeTouchEvents(true);
-}
+const React = window.React
+const ReactDom = window.ReactDOM
+const ElementPan = window.ReactElementPan
+const h = React.createElement
 
 // Simple image demo
 ReactDom.render(
-    new ElementPan({
-        startX: 771,
-        startY: 360
-    }, React.DOM.img({ src: 'img/beer.jpg' })
-), document.getElementById('image-demo'));
+  h(
+    ElementPan,
+    {
+      startX: 771,
+      startY: 360
+    },
+    h('img', {src: 'img/beer.jpg'})
+  ),
+  document.getElementById('image-demo')
+)
 
 // Huge SVG demo
 ReactDom.render(
-    new ElementPan({
-        startX: 1771,
-        startY: 1360
-    }, React.DOM.img({ src: 'img/metro.svg' })
-), document.getElementById('map-demo'));
+  h(
+    ElementPan,
+    {
+      startX: 1771,
+      startY: 1360
+    },
+    h('img', {src: 'img/metro.svg'})
+  ),
+  document.getElementById('map-demo')
+)
 
 // Slightly more complicated DOM-element demo
-var i = 20, themDivs = [];
+const themDivs = []
+let i = 20
+
 while (--i) {
-    themDivs.push(React.DOM.div({
+  themDivs.push(
+    h(
+      'div',
+      {
         key: i,
         style: {
-            width: i * 30,
-            lineHeight: (i * 10) + 'px'
+          width: i * 30,
+          lineHeight: `${i * 10}px`
         }
-    }, 'Smaller...'));
+      },
+      'Smaller...'
+    )
+  )
 }
 
-ReactDom.render(
-    new ElementPan(null, themDivs),
-    document.getElementById('html-demo')
-);
+ReactDom.render(h(ElementPan, null, themDivs), document.getElementById('html-demo'))

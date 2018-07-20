@@ -2,14 +2,14 @@
   "name": "react-element-pan",
   "version": "1.0.9",
   "description": "React component for allowing panning of DOM-elements too large for their container, in a Google Maps-like way.",
-  "main": "src/element-pan.js",
+  "main": "lib/element-pan.js",
+  "unpkg": "umd/element-pan.js",
   "browser": "umd/element-pan.js",
   "scripts": {
     "test": "eslint .",
-    "build": "npm run build:umd && npm run build:prod",
-    "build:umd": "webpack src/element-pan.js umd/element-pan.js",
-    "build:prod": "NODE_ENV=production webpack -p src/element-pan.js umd/element-pan.min.js",
-    "prepublish": "npm run build && npm run test"
+    "build": "babel -s true src/element-pan.js -o lib/element-pan.js",
+    "build:umd": "NODE_ENV=production webpack -p",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
@@ -31,14 +31,25 @@
   },
   "homepage": "https://github.com/rexxars/react-element-pan",
   "devDependencies": {
-    "eslint": "^3.15.0",
-    "eslint-config-vaffel": "^5.0.0",
-    "webpack": "^1.12.6"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-sanity": "^0.132.5",
+    "prettier": "^1.13.7",
+    "react": "^16.4.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "eventlistener": "0.0.1"
+    "eventlistener": "0.0.1",
+    "prop-types": "^15.6.2"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^15.0.0 || ^16.0.0"
   }
 }

@@ -1,23 +1,31 @@
-'use strict';
-
-var webpack = require('webpack');
+const path = require('path')
 
 module.exports = {
-    output: {
-        library: 'reactElementPan',
-        libraryTarget: 'umd'
-    },
-    externals: {
-        react: {
-            root: 'React',
-            commonjs: 'react',
-            commonjs2: 'react',
-            amd: 'react'
+  mode: 'production',
+  entry: path.join(__dirname, 'src', 'element-pan.js'),
+  output: {
+    library: 'ReactElementPan',
+    libraryTarget: 'umd',
+    path: path.join(__dirname, 'umd'),
+    filename: 'element-pan.js'
+  },
+  externals: {
+    react: {
+      root: 'React',
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react'
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
         }
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-        })
+      }
     ]
-};
+  }
+}
