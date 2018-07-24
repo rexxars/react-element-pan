@@ -19,7 +19,7 @@ class ElementPan extends React.Component {
     // mouse is on the outside of the element (as long as the mouse button
     // is still being pressed) - this is why we're attaching to the window
     eventListener.add(window, 'mousemove', this.onDragMove)
-    eventListener.add(window, 'touchmove', this.onDragMove)
+    eventListener.add(window, 'touchmove', this.onDragMove, {passive: false})
     eventListener.add(window, 'mouseup', this.onDragStop)
     eventListener.add(window, 'touchend', this.onDragStop)
 
